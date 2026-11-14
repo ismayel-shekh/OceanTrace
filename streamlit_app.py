@@ -641,14 +641,6 @@ with tabs[1]:
         ["Estimated concentration", "Difference from 2019–2025 mean"],
         horizontal=True,
     )
-    animate = st.toggle(
-        "Play timeline animation automatically",
-        value=True,
-        help="The chart starts drawing the monthly record as soon as it loads. Use Pause or Replay on the chart.",
-    )
-    if animate:
-        animated_fig, frame_names = make_timeline_figure(df, metric)
-        render_autoplay_plotly(animated_fig, frame_names, height=570)
     else:
         if metric == "Estimated concentration":
             fig = go.Figure()
